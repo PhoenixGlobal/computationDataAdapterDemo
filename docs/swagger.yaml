@@ -1,0 +1,38 @@
+definitions:
+  main.GetDataResponse:
+    properties:
+      code:
+        type: integer
+      data:
+        type: string
+      msg:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: computationDataAdapterDemo API
+  title: computationDataAdapterDemo API
+  version: "1.0"
+paths:
+  /api/data:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: number，0 is false，1 is true
+        in: query
+        name: number
+        type: integer
+      - description: shape of matrix
+        in: query
+        name: matrix
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/main.GetDataResponse'
+      summary: get data
+swagger: "2.0"

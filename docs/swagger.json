@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "computationDataAdapterDemo API",
+        "title": "computationDataAdapterDemo API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/data": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "get data",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "number，0 is false，1 is true",
+                        "name": "number",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "shape of matrix",
+                        "name": "matrix",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetDataResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.GetDataResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {
+                    "type": "string"
+                },
+                "msg": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
